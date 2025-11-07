@@ -15,6 +15,12 @@ module "vpc" {
     "10.16.176.0/20"  #sn-web-C
   ]
 
+  public_subnet_names = [
+    "sn-web-A",
+    "sn-web-B",
+    "sn-web-C"
+  ]
+
   private_subnets = [
     "10.16.32.0/20",  #sn-app-A
     "10.16.96.0/20",  #sn-app-B
@@ -24,10 +30,25 @@ module "vpc" {
     "10.16.128.0/20", #sn-reserved-C
   ]
 
+  private_subnet_names = [
+    "sn-app-A",
+    "sn-app-B",
+    "sn-app-C",
+    "sn-reserved-A",
+    "sn-reserved-B",
+    "sn-reserved-C",
+  ]
+
   database_subnets = [
     "10.16.16.0/20",  #sn-db-A
     "10.16.80.0/20",  #sn-db-B
     "10.16.144.0/20", #sn-db-C
+  ]
+
+  database_subnet_names = [
+    "sn-db-A",
+    "sn-db-B",
+    "sn-db-C"
   ]
 
   enable_ipv6 = true
