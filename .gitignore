@@ -1,0 +1,13 @@
+# Terraform local files
+*.tfstate
+*.tfstate.backup
+*.tfstate.*
+crash.log
+.terraform/
+.terraform.tfstate
+terraform.tfstate
+terraform.tfstate.backup
+
+# Ignore IDE/OS files
+.DS_Store
+.vscode/
