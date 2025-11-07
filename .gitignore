@@ -8,7 +8,7 @@ crash.log
 terraform.tfstate
 terraform.tfstate.backup
 .terraform.lock.hcl
-.plan.tfplan
+plan.tfplan
 
 # Ignore IDE/OS files
 .DS_Store
