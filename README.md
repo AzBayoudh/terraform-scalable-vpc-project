@@ -31,7 +31,7 @@ I focused on building something reusable that follows best practices for real-wo
 - VPC routing and IGW(Internet Gateway)
 - NACL'S
 - Security Group implementation for secruity
-- NAT GAteways
+- NAT Gateways
 - Connect EC2 instances to the subnets for a full stack setup  
 
 ## Tools
