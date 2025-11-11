@@ -53,16 +53,21 @@ module "vpc" {
 
   enable_ipv6 = true
 
-  private_subnet_assign_ipv6_address_on_creation  = true
-  public_subnet_assign_ipv6_address_on_creation   = true
-  database_subnet_assign_ipv6_address_on_creation = true
+  public_subnet_assign_ipv6_address_on_creation   = false
+  private_subnet_assign_ipv6_address_on_creation  = false
+  database_subnet_assign_ipv6_address_on_creation = false
 
-  private_subnet_ipv6_prefixes  = [0, 2, 4, 6, 8, 10]
+  public_subnet_enable_dns64   = false
+  private_subnet_enable_dns64  = false
+  database_subnet_enable_dns64 = false
+
+  private_subnet_ipv6_prefixes  = [2, 6, 10, 0, 4, 8]
   public_subnet_ipv6_prefixes   = [3, 7, 11]
   database_subnet_ipv6_prefixes = [1, 5, 9]
 
+ 
 
-  enable_dns_hostnames = true
-  enable_dns_support   = true
+
+
 
 }
