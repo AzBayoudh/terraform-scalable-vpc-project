@@ -51,8 +51,13 @@ module "vpc" {
     "sn-db-C"
   ]
 
-  enable_ipv6 = true
 
+
+  # Public instances auto-get public IPv4s
+  map_public_ip_on_launch = true
+
+  # IPv6 auto-assign
+  enable_ipv6 = true
   private_subnet_assign_ipv6_address_on_creation  = true
   public_subnet_assign_ipv6_address_on_creation   = true
   database_subnet_assign_ipv6_address_on_creation = true
