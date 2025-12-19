@@ -51,6 +51,9 @@ module "vpc" {
     "sn-db-C"
   ]
 
+  private_subnet_ipv6_prefixes  = [0, 2, 4, 6, 8, 10]
+  public_subnet_ipv6_prefixes   = [3, 7, 11]
+  database_subnet_ipv6_prefixes = [1, 5, 9]
 
 
   # Public instances auto-get public IPv4s
@@ -62,12 +65,15 @@ module "vpc" {
   public_subnet_assign_ipv6_address_on_creation   = true
   database_subnet_assign_ipv6_address_on_creation = true
 
-  private_subnet_ipv6_prefixes  = [0, 2, 4, 6, 8, 10]
-  public_subnet_ipv6_prefixes   = [3, 7, 11]
-  database_subnet_ipv6_prefixes = [1, 5, 9]
-
-
   enable_dns_hostnames = true
   enable_dns_support   = true
 
+  # NAT Gateway Configuration 
+  enable_nat_gateway = true
+  one_nat_gateway_per_az = true
+  single_nat_gateway = false
+  create_database_nat_gateway_route = false
+  create_private_nat_gateway_route = true
+
+  
 }
