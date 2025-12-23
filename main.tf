@@ -1,5 +1,5 @@
 
-module "vpc" {
+module "vpc" {  
   source  = "terraform-aws-modules/vpc/aws"
   version = ">= 6.0.0"
 
@@ -56,8 +56,9 @@ module "vpc" {
   database_subnet_ipv6_prefixes = [1, 5, 9]
 
 
-  # Public instances auto-get public IPv4s
+  # Public (web tier) instances auto-get public IPv4s
   map_public_ip_on_launch = true
+
 
   # IPv6 auto-assign
   enable_ipv6 = true
@@ -67,8 +68,9 @@ module "vpc" {
 
   enable_dns_hostnames = true
   enable_dns_support   = true
+  
 
-  # NAT Gateway Configuration 
+/* NAT Gateway Configuration 
   enable_nat_gateway = true
   one_nat_gateway_per_az = true
   single_nat_gateway = false
@@ -77,3 +79,9 @@ module "vpc" {
 
   
 }
+*/
+}
+
+
+
+
