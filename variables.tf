@@ -3,3 +3,9 @@ variable "AWS_Region" {
   type        = string
   default     = "us-east-1"
 }
+
+variable "my_ip" {
+  description = "My IP address for SSH access"
+  type = string
+}
+
